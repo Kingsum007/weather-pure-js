@@ -36,8 +36,66 @@ function showWeather(data) {
         }@2x.png" alt="Weather Icon" />
         <div class="temp">Temprature: ${Math.round(data.main.temp)}F</div>
         <div class="desc" >Decription: ${data.weather[0].description}</div>
-        
-    
-    
+        <div >Wind Speed: ${data.wind.speed}</div>
     `;
 }
+
+
+
+//OOP - Object Oriented Programming برنامه نویسی شی گرا 
+//Concept programming => Simple, Maintainable, Further Development 
+// Everything is Object
+// Object => Property (ویژه‌گی ها), Method  (رفتار ها یا کارکرد)
+// Class, Object, Polymorphism, Encapsulation, Inheritance, Abstraction
+// Code Reuasability
+// Person (Color, Height, Name, Weight....)
+// Animal ( Color, Height, Name, Weight...)
+// Class is the Blueprint, Object is the Instance
+
+//example car
+
+// class Car {
+//     constructor(color, model)
+//     {
+//       this.color=color; //Property
+//       this.model=model;
+//     }
+//     // constructor(color,model,manfucturer)
+//     // {
+//     //   this.model = model;
+//     //   this.color = color;
+//     //   this.manfucturer = manfucturer;
+//     // }
+//   start()
+//   {
+//     console.log("The Car started");
+//   }
+//   stop (){
+//     console.log("The Car Stopped");
+//   }
+// }
+
+// let myCar = new Car("White","BMW");
+// let myCar1 = new Car("Black","AUDI A1");
+
+// console.log("Method :", myCar1.start());
+
+// Exampl Person
+
+class Person {
+  constructor( name,age)
+  {
+this.name = name;
+this.age = age;
+  }
+  greet()
+  {
+    console.log(`Hello My Name is: ${this.name} and I have ${this.age} years age`);
+  }
+}
+class African extends Person {
+
+}
+
+let p1 = new Person("Ahmad",28);
+p1.greet();
