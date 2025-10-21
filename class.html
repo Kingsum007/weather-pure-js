@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        class Car {
+            constructor(brand)
+            {
+                this.brand=brand;
+            }
+
+        }
+        // class Person{
+        //     Person(name)
+        //     {   
+        //         this.name=name;
+        //     }
+        // }
+        class Animal {
+           constructor()
+           {
+            this.name = "Tiger";
+            this.type = "Meat eater";
+           }
+        }
+// const p4 = new Person();
+    class Person {
+        constructor(name,age,salary=null)
+        {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+            
+        }
+        talk()
+        {
+            console.log(`The Person ${this.name} speaks;`);
+        }
+        walking(name)
+        {
+            this.name = name;
+        }
+    }
+    test();
+        const obj = new Car("Toyota");
+        // const p1 = new Person("Ahmad");
+        const animal = new Animal();
+        const p2 = new Person("Ahmad",23,23000);
+        const p3 = new Person("Farooq",27);
+        console.log(p2.walking("Dawood"));
+        document.getElementById("output").innerHTML=p2.talk();
+
+        function test()
+        {
+
+        }
+    </script>
+</body>
+</html>
