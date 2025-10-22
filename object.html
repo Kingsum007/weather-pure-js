@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Iterating the obejct properties</p>
+    <p id="output"></p>
+    <script>
+      const table = {
+        color: "brown",
+        shape: "round",
+        price: 10000,
+      };
+
+    //   for (let key in table) {
+    //     document.getElementById("output").innerHTML +=
+    //       key + ": " + table[key] + "<br>";
+    //   }
+    	const num = {
+			10: "ten",
+			20: "Twenty",
+            30: "Thirty",
+		}
+		const x = 20;
+		document.getElementById("output").innerHTML =  num[x + 10];
+      //in JS an object is a collection of KEY:Value pairs
+      //Object Properties
+      const car = {
+        brand: "Tesla",
+        model: "CyberTruck",
+        details: {
+          id: 1,
+          price: 23450,
+        },
+      };
+      //Access using Dot NOtation
+      console.log(car.brand);
+      //access nested object
+      console.log(car.details.price);
+
+      //access using Square bracket
+      console.log(car["brand"]);
+      // access nested object
+      console.log("Nested Object " + car["details"]["price"]);
+
+      //access using expression
+    //   let x = -4500;
+      car.details.id = 3;
+      console.log(car["details"]["id"]);
+      //   delete car.details;
+      for (let i in car) {
+        console.log(car[i]);
+      }
+      console.log(JSON.stringify(car));
+      const person = {};
+     // When you want a readonly object use this method
+      Object.defineProperty(person, "name", {
+        value: "Ahmad",
+        writable: false,
+        enumerable: false,
+        configurable: false,
+      });
+      person.name = "farooq";
+      delete person.name;
+    //   console.log(person.name);
+      for (let i in person)
+      {
+        console.log(person[i]);
+      }
+    </script>
+  </body>
+</html>
