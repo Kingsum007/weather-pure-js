@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Method</title>
+</head>
+<body>
+   <p id="output"></p>
+   <script>
+const output = document.getElementById("output");
+
+   class Person{
+    // Research on Singleton Pattern ( Design Patterns)
+        constructor(name)
+        {
+            this.name = name;
+        //     if(Person.instance)
+        // {
+        //     return Person.instance;
+        // }
+        
+        }
+      static  talk(name)  //  static is an identifier 
+        {
+            return `Person Talking ${name}`;
+        }
+
+        speak()
+        {
+            return `Hello ${Person.talk("ahmad")}`;
+        }
+    }
+    const person = {
+         name:"value",
+    }
+    const obj = new Person("Ahmad");
+    const obj1 = new Person("Farooq")
+    try {
+            output.innerHTML=obj.speak();
+    } catch (error) {
+            output.innerHTML = error.message;
+    }
+
+    console.log(Object.entries(person));
+    console.log(JSON.stringify(person))
+   </script> 
+</body>
+</html>
