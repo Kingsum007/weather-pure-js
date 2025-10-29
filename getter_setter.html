@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getter And Setter</title>
+  </head>
+  <body>
+    <input type="color" name="" id="colorpicker" />
+
+    <script>
+      // //Getter => Getting Properties  Values
+      // //Setter => Setting Properties  Values
+      // const person = {
+      //     name:"Ahmad",
+      //     // greeting:function(){
+      //     //     return "Hello "+this.name;
+      //     // }
+      //          get getGreeting()
+      //          {
+      //             return "Hello I am Getter "+this.name;
+      //          },
+      //          set setName(name)
+      //          {
+      //             return this.name =name;
+      //          }
+      // }
+      // // Simple Object Method Usage
+      // // console.log(person.greeting());
+      // //get accessor
+      // console.log(person.getGreeting);
+
+      // //setter
+      // person.setName = "Farooq";
+      // console.log(person.getGreeting)
+      // Object.defineProperty(person,"hi",{
+      //     configurable:false,
+
+      //     enumerable:false,
+      //     get:function(){
+      //             return this.name+ " Hi ";
+      //     }
+      // });
+      // console.log(person.hi);
+
+      const background = {
+        _color: "#fead34",
+        get getColor() {
+          return this._color;
+        },
+        set setColor(color) {
+          return (this._color = color);
+        },
+      };
+      const picker = document.getElementById("colorpicker");
+
+      picker.addEventListener("input", () => {
+        console.log(background._color);
+        background.setColor = picker.value;
+        document.body.style.backgroundColor = background.getColor;
+      });
+    </script>
+  </body>
+</html>
