@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document </title>
+</head>
+<body>
+    <p id="output"></p>
+     <p id = "output1">The house object is  </p>
+  <p id = "output2">The full address of the house is  </p>
+
+    <script>
+
+
+
+        class Tree{
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+        }
+        function Tree1(name,age) //Object Constructor
+        { 
+            this.name = "Palm",
+            this.age = 34
+        
+        }
+        const tr = new Tree("Test");
+        document.getElementById("output").innerHTML= tr.name  ;
+
+         function HouseAddress(no, street, city) {
+      // Adding properties
+      this.houseNo = no,
+      this.street = street,
+      this.city = city;
+      // Adding a method
+      this.getFullAddress = function () {
+        return this.houseNo + ", " + this.street + ", " + this.city;
+      };
+    }
+    const house = new HouseAddress(20, "Cooper Square", "New York");
+    document.getElementById("output1").innerHTML += JSON.stringify(house);
+    document.getElementById("output2").innerHTML += house.getFullAddress();
+    </script>
+</body>
+</html>

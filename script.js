@@ -40,10 +40,8 @@ function showWeather(data) {
     `;
 }
 
-
-
-//OOP - Object Oriented Programming برنامه نویسی شی گرا 
-//Concept programming => Simple, Maintainable, Further Development 
+//OOP - Object Oriented Programming برنامه نویسی شی گرا
+//Concept programming => Simple, Maintainable, Further Development
 // Everything is Object
 // Object => Property (ویژه‌گی ها), Method  (رفتار ها یا کارکرد)
 // Class, Object, Polymorphism, Encapsulation, Inheritance, Abstraction
@@ -83,19 +81,17 @@ function showWeather(data) {
 // Exampl Person
 
 class Person {
-  constructor( name,age)
-  {
-this.name = name;
-this.age = age;
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
   }
-  greet()
-  {
-    console.log(`Hello My Name is: ${this.name} and I have ${this.age} years age`);
+  greet() {
+    console.log(
+      `Hello My Name is: ${this.name} and I have ${this.age} years age`
+    );
   }
 }
-class African extends Person {
+class African extends Person {}
 
-}
-
-let p1 = new Person("Ahmad",28);
+let p1 = new Person("Ahmad", 28);
 p1.greet();
