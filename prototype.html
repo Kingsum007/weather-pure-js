@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id = "demo"> </p>
+    <div id="output"></div>
+    <script>
+      //   const output = document.getElementById("output");
+      //   
+
+      //   output.textContent = Array.prototype;
+      //   console.log(Number.prototype);
+      //   let str = new String("hElLo");
+      // //   String.prototype.toLowerCase = function () {
+      // //     return this.toUpperCase();
+      // //   };
+      // //   String.prototype.toUpperCase = function () {
+      // //     return this.italics();
+      // //   };
+      //   String.prototype.firstCase = function () {
+      //     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+      //   };
+      //   output.innerHTML = str.firstCase();
+      const output = document.getElementById("demo");
+
+      function Person(id, name) {
+        this.id = id;
+        this.name = name;
+      }
+      Person.prototype.display = function () {
+        output.innerHTML += this.id + ", " + this.name + "<br>";
+      };
+      const p1 = new Person(1, "James");
+      const p2 = new Person(2, "Nayan");
+      p1.display();
+      p2.display();
+    </script>
+  </body>
+</html>
