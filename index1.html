@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Js ES5 Objects</title>
+  </head>
+  <body>
+    <p id="out"></p>
+    <p id = "output"> </p>
+    <script>
+      //   const person = {
+      //     firstName: "Ahamd",
+      //     lastName: "Ahmadi",
+      //   };
+      //   const student = Object.create(person);
+      //   const p1 = Object.create(person);
+      //   p1.firstName = "Farooq";
+
+      //   student.age = 18;
+      //   Object.defineProperties(person, {
+      //     dob: {
+      //       value: "1997",
+      //     },
+      //     pob: {
+      //       value: "Afghanistan",
+      //     },
+      //   });
+
+      //   const desc = Object.getOwnPropertyDescriptor(person, "dob");
+      //   //document.getElementById("out").innerHTML = p1.dob + student.pob;
+      //   //document.getElementById("out").innerHTML =desc.configurable;
+      //   //document.getElementById("out").innerHTML = Object.getOwnPropertyNames(person);
+      //   const prot = Object.getPrototypeOf(p1);
+      //   //document.getElementById("out").innerHTML = JSON.stringify(prot);
+      //   //document.getElementById("out").innerHTML = Object.keys(person);
+      //   //Object.freeze(person);
+      //   person.firstName = "Dawood";
+      //   console.log(person.firstName);
+      //   Object.seal(person);
+      //   person.age = 20;
+      //   delete person.firstName;
+      //   console.log(Object.isFrozen(person));
+
+      //5th November 2025
+      function Counter() {
+        let count = 0; // Private Variable
+        return {
+          increment() {
+            count++;
+          },
+          getCount() {
+            return count;
+          },
+        };
+      }
+      const c1 = Counter();
+      c1.increment();
+      console.log(c1.getCount());
+      console.log(c1.count);
+      let output = document.getElementById("output");
+      function shoppingCart() {
+        const cartItems = [];
+        function add(item) {
+          cartItems.push(item);
+          output.innerHTML += `${item.name} added to the cart. <br>`;
+        }
+        function remove(itemName) {
+          const index = cartItems.findIndex((item) => item.name === itemName);
+          if (index !== -1) {
+            const removedItem = cartItems.splice(index, 1)[0];
+            output.innerHTML += `${removedItem.name} removed from the cart. <br>`;
+          } else {
+            output.innerHTML += `Item ${itemName} not found in the cart. <br>`;
+          }
+        }
+        return {
+          add,
+          remove,
+        };
+      }
+
+      // Defining items
+      const item1 = { name: "Car", price: 1000000 };
+      const item2 = { name: "Bike", price: 100000 };
+      // Create a new Shopping cart
+      const cart = shoppingCart();
+      // Adding items to the cart
+      cart.add(item1);
+      cart.add(item2);
+      // Remove bike from the cart
+      cart.remove("Bike");
+
+      class Car {
+        #brand = "TATA"; //private variables
+        #name = "Nexon";
+        #milage = 16;
+        get getMilage(){
+          return this.#milage;
+        }
+        set setMilage(milage)
+        {
+          this.#milage = milage;
+        }
+      }
+
+
+      let car = new Car();
+
+      console.log(car.getMilage);
+      car.setMilage =23;
+      console.log(car.getMilage);
+      // console.log(car.#milage) generates error
+    </script>
+  </body>
+</html>
