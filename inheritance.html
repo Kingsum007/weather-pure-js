@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Inheritance</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        greet() {
+          return "Hello";
+        }
+      }
+
+      class African extends Person {
+        constructor(name) {
+          super(name);
+        }
+        talk(name) {
+          return `Person ${this.name} Talking`;
+        }
+      }
+
+      class AfricanGirl extends African {
+        constructor(name) {
+          super(name);
+        }
+      }
+
+      const p1 = new Person("ahmad", 20);
+      const p2 = new African("African");
+      const p3 = new AfricanGirl("African Girl");
+      console.log(p2.greet());
+      console.log(p2.talk());
+      console.log(p3.greet());
+    </script>
+  </body>
+</html>
