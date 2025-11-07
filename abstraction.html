@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="output"></p>
+    <script>
+          try{
+       function fruit()
+       {
+          this.name = "Fruit";
+              if(this.constructor == fruit)
+              {
+                  throw new Error ("You cant create object");
+              }
+       }
+       fruit.prototype.getName = function(){
+        return this.name;
+       }
+       const apple = new fruit();}
+       catch(error)
+       {
+        document.getElementById("output").innerHTML = error;
+       }
+      
+       class Person {
+        #nid = 109765;
+        getName(name)
+        {
+            console.log(this.name); 
+        }
+
+       }
+       const p1 = new Person();
+       const a = [1,2,3,4,5,6];
+       console.log(a.pop())
+       console.log(Math.random());
+    </script>
+  </body>
+</html>
