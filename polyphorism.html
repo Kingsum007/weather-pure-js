@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PolyMorphism</title>
+  </head>
+  <body>
+    <p id="out"></p>
+    <p id="out1"></p>
+    <hr>
+    <p id="out2"></p>
+    <p id="out3"></p>
+    <script>
+      //overriding in OOP
+
+      // int add(int a, int b)
+      // {
+      //     return a+b;
+      // }
+      // @override
+      // int add(int a, int b, int c)
+      // {
+
+      // }
+
+      //Polymorphism in JS
+
+      class Shape {
+        area(a, b) {
+          return "The Area";
+        }
+      }
+      class Circle extends Shape {
+        area(r) {
+          return "The Area of Circle: " + 3.14 * r * r;
+        }
+      }
+      class Rectangle extends Shape {
+        area(l, b) {
+          return "The Area of Rectangle: " + l * b;
+        }
+      }
+      const circle = new Circle();
+      document.getElementById("out").innerHTML = circle.area(5);
+
+      const rect = new Rectangle();
+
+      document.getElementById("out1").innerHTML = rect.area(4, 8);
+
+
+      class Math {
+        mathOperations(a,b)
+        {
+            document.getElementById("out2").innerHTML="Addition: "+(a+b)+"<br>";
+            
+            document.getElementById("out3").innerHTML="Subtraction: "+(a-b)+"<br>";
+        }
+      }
+      class AdvanceMath extends Math {
+        mathOperations(a,b)
+        {
+            super.mathOperations(a,b);
+            document.getElementById("out2").innerHTML +="Multiplication: "+(a*b)+"<br>";
+            
+            document.getElementById("out3").innerHTML +="Division: "+(a/b)+"<br>";
+        }
+      }
+      const a_math = new AdvanceMath();
+      a_math.mathOperations(10,5);
+    </script>
+  </body>
+</html>
