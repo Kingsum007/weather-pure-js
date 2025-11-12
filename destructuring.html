@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring in JS</title>
+  </head>
+  <body>
+    <script>
+      //API, Modern Programming
+
+      // import {reactRouter }  from "react";
+      const arr = ["Apple", "Banana", "Watermelon"];
+
+      // console.log(arr[2]);
+
+      const [a, b, c] = arr;
+      console.log(c);
+      const arr1 = [1, 2, [1, 2]];
+      const [aa, , [bb, cc]] = arr1;
+      console.log(bb + " ," + cc);
+      const students = {
+        id: 1,
+        name: "Ahmad",
+        subjects: {
+          s1: "CSharp",
+          s2: "C++",
+          s3: "HTML",
+        },
+        marks: {
+          s1: 100,
+          s2: 78,
+          s3: 89,
+        },
+      };
+      const {
+        id,
+        name,
+        subjects: { s1, subj2 },
+      } = students;
+      console.log(s1);
+
+      /*
+        Task => Addition 
+        Step1: Start
+        Step2: Declare a,b,c
+        Step3: Get a and B
+        Step4: c = a+b;
+        Step5: display c
+        Step6: End (Stop)
+
+
+
+      */
+    </script>
+  </body>
+</html>

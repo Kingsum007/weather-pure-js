@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input type="text" name="id" id="id" />
+      <br />
+      <select name="subject" id="subject">
+        <option value="Math">Math</option>
+        <option value="CSharp">CSharp</option>
+        <option value="JS">Js</option>
+        <option value="HTML">HTML</option>
+      </select>
+      <br />
+      <input type="text" id="marks" />
+      <br />
+      <select name="semester" id="semester">
+        <option value="first">first</option>
+        <option value="second">second</option>
+        <option value="third">third</option>
+        <option value="fourth">fourth</option>
+      </select>
+      <br />
+      <button id="save">Save</button>
+    </form>
+    <br />
+    <p id="output"></p>
+    <script>
+      const id = document.getElementById("id");
+      const subject = document.getElementById("subject");
+      const marks = document.getElementById("marks");
+      const semester = document.getElementById("semester");
+      const btnSave = document.getElementById("save");
+      const students = [];
+      btnSave.addEventListener("click", function (e) {
+        e.preventDefault();
+        students.push(id.value);
+        console.log(students[0]);
+      });
+    </script>
+  </body>
+</html>

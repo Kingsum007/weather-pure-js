@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            margin: 0;
+            padding: auto;
+        }
+        table{
+            background-color: antiquewhite;
+            border-collapse: collapse;
+        
+        }
+        th{
+            background-color: brown;
+            color: rgb(246, 242, 242);
+        }
+        tr{
+            border: 1px solid black;
+            
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--Form Section-->
+    <input type="text" id="id" placeholder="Enter ID"><br>
+    <select name="sujects" id="subjects" style="width: 150px;">
+        <option value="English">English</option>
+        <option value="Scince">Scince</option>
+        <option value="Math">Math</option>
+        <option value="History">History</option>
+    </select> <br>
+        <select name="Semester" id="Semester" style="width: 150px;">
+        <option value="First Term">First Term</option>
+        <option value="Second Term">Second Term</option>
+        <option value="Third Term">Third Term</option>
+        <option value="Fourth Term">Fourth Term</option>
+    </select> <br>
+    <input type="number" id="score" placeholder="Add Your Score"><br>
+    <button id="click" style="width: 150px;">click</button> <br>
+    <button id="total" style="width: 150px;">Average</button>
+
+    <p id="result">Result of terms:</p>
+
+
+    <!--Table Section -->
+        <table style="border: 1px solid black; width: 100%;">
+            <caption style="font-size: 24px;">Table Score</caption>
+            <thead>
+                <tr> <th>Subjects</th>
+                    <th>1st_Semester</th>
+                    <th>2st_Semester</th>
+                    <th>3st_Semester</th>
+                    <th>4st_Semester</th>
+                    <th>Average</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Math</td>
+                   <td ><p id="mathfirstSemester"></p></td>
+                   <td ><p id="mathsecondSemester"></p></td>
+                   <td id="semester3rd"></td>
+                   <td id="semester4th"></td>
+                   <td id="semester_a"></td>
+                   <th id="semester_g"></th>
+
+                </tr>
+                <tr>
+                    <td>English</td>
+                   <td ><p id="englishfirstSemester"></p></td>
+                   <td id="semester2nd"></td>
+                   <td id="semester3rd"></td>
+                   <td id="semester4th"></td>
+                   <td id="semester_a"></td>
+                   <th id="semester_g"></th>
+
+                </tr>
+                <!-- <tr>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                </tr>
+                <tr>
+                    <td>History</td> -->
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total:</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    <script>
+        const id = document.getElementById("id");
+        const subject = document.getElementById("subjects");
+        const semester = document.getElementById("Semester");
+        const save = document.getElementById("click");
+        const total1 = document.getElementById("total");
+        const score = document.getElementById("score");   
+        document.addEventListener("DOMContentLoaded",function(){
+            const firstMath = Number(localStorage.getItem("firstMath"));
+            //parseInt(), parseFloat()
+             document.getElementById("mathfirstSemester").innerHTML = firstMath;
+             const secondMath = Number(localStorage.getItem("secondMath"));
+             document.getElementById("mathsecondSemester").innerHTML = secondMath;
+             const total = (firstMath+secondMath)/2;
+             document.getElementById("semester_a").textContent=total;
+        }) ;    
+        save.addEventListener("click", function(){
+                const sem = semester.value;
+            if(sem == "First Term" && subject.value =="Math"){
+                localStorage.setItem("firstMath",score.value);
+            document.getElementById("mathfirstSemester").innerHTML = localStorage.getItem("firstMath");
+        }
+            else if(semester.value =="First Term" && subject.value=="English")
+            {
+                 document.getElementById("englishfirstSemester").innerHTML = score.value;
+            }
+            else if(semester.value == "Second Term" && subject.value == "Math")
+            {
+                localStorage.setItem("secondMath",score.value);
+                document.getElementById("mathsecondSemester").innerHTML = score.value;
+            }
+        }
+       
+    );
+   
+        total.addEventListener("total", function(){
+            document.getElementById("semester_a").innerHTML=id+" "+subjects
+        })
+
+    </script>
+</body>
+</html>
