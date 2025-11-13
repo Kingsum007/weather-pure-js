@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Destructuring</title>
+  </head>
+  <body>
+    <p id="out"></p>
+    <script>
+      const person = {
+        name: "Ahmad",
+        age: 23,
+        phone: 786776717,
+        address:{
+            city:"kabul",
+            country:"Afghanistan"
+        },
+      };
+      //simple
+      const {name,age,phone } = person;
+      console.log(name);
+//renaming
+      const {name: na, age:ag}= person;
+      console.log(na);
+      //remaining 
+      const {name1, ...age1} = person;
+      console.log(JSON.stringify(age1));
+      //default value
+      const {name:nam="Dawood",age:a=23}=person;
+
+      let aa = 50, b = 200;
+      console.log(aa+" : "+b);
+      [b,aa] = [aa,b];
+      console.log(aa+" : "+b);
+    </script>
+  </body>
+</html>
