@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click" onclick="window.print()">Print </button>
+    <script>
+        var name="hello";
+      const person = {
+        name: {
+            name:"Ahmad",
+             lastname:"Ahmadi",
+        },
+        age: 18,
+        add:function(){
+            return this.name.name+this.name.lastname;
+        }
+      };
+
+      console.log(person?.name?.lastname);
+      console.log(person.add?.());
+      console.log(person.name?.["lastname"])
+      delete person.name?.lastname;
+      console.log(person.name?.["lastname"] ?? "Test")
+
+    //   document.getElementById("click").addEventListener("click",function(){
+    //     window.print();
+    //   });
+    console.log(window.TextEvent);
+    </script>
+  </body>
+</html>
