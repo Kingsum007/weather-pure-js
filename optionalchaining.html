@@ -6,30 +6,65 @@
     <title>Document</title>
   </head>
   <body>
-    <button id="click" onclick="window.print()">Print </button>
+    <button id="click" onclick="window.print()">Print</button>
     <script>
-        var name="hello";
+      var name = "hello";
       const person = {
         name: {
-            name:"Ahmad",
-             lastname:"Ahmadi",
+          name: "Ahmad",
+          lastname: "Ahmadi",
         },
         age: 18,
-        add:function(){
-            return this.name.name+this.name.lastname;
-        }
+        add: function () {
+          return this.name.name + this.name.lastname;
+        },
       };
 
       console.log(person?.name?.lastname);
       console.log(person.add?.());
-      console.log(person.name?.["lastname"])
+      console.log(person.name?.["lastname"]);
       delete person.name?.lastname;
-      console.log(person.name?.["lastname"] ?? "Test")
+      console.log(person.name?.["lastname"] ?? "Test");
 
-    //   document.getElementById("click").addEventListener("click",function(){
-    //     window.print();
-    //   });
-    console.log(window.TextEvent);
+      //   document.getElementById("click").addEventListener("click",function(){
+      //     window.print();
+      //   });
+      console.log(window.TextEvent);
+      //Print one to Twenty (1 ~ 20)
+      /*
+      Step 1: Start
+      Step 2: Declare X and Assign 0
+      Step 3: Increment X 
+      Step 4: Print X
+      Step 4: Check if X is less than or equal 20 then Goto Step 2
+      Step 5: Stop
+
+
+      Fahrenheit to Celsius 
+      1: Start
+      2: Get Fahrenheit Degree 
+      3: Calculate (Fahrenheit-32)* 5/9; Store C
+      4: Print C
+      5: Stop 
+    */
+
+      // for (let i = 1; i <= 20; i++) {
+      //   console.log(i);
+      // }
+      function printNumbers(n) {
+        console.log(n);
+        if (n < 20) {
+          printNumbers(n + 1); //Recursion => Recursive Call
+        }
+      }
+      printNumbers(10);
+
+      function convertFtoC(Fahrenheit)
+      {
+        return (Fahrenheit-32) * 5 /9;
+      }
+
+      console.log("The Celsius Degree of 59F is: "+ convertFtoC(59));
     </script>
   </body>
 </html>
