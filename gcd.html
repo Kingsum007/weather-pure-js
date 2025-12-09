@@ -27,30 +27,30 @@
       }
       //   document.getElementById("out").innerHTML = gcd1(75, 25);
 
-      function gcd2(a, b) {
+      function gcd2(a, b, c) {
         let gcdValue = 1;
-        for (let i = 1; i <= Math.min(a, b); i++) {
-          if (a % i === 0 && b % i === 0) {
+        for (let i = 1; i <= Math.min(a, b, c); i++) {
+          if (a % i === 0 && b % i === 0 && c % i === 0) {
             gcdValue = i;
           }
         }
         return gcdValue;
       }
-      //   document.getElementById("out").innerHTML += ": " + gcd2(39, 6);
+      document.getElementById("out").innerHTML += ": " + gcd2(45, 160, 120);
 
-      //Factorial
-      let n;
-      function Factorial(n) {
-        let fact = 1;
-        for (let i = 1; i <= n; i++) {
-          fact *= i;
-          // fact = fact*i;
-        }
-        return fact;
-      }
-      n = parseInt(prompt("Enter a Number"));
-      document.getElementById("out").innerHTML =
-        `Factorial of your choosen Number ${n}: ` + Factorial(n);
+      // //Factorial
+      // let n;
+      // function Factorial(n) {
+      //   let fact = 1;
+      //   for (let i = 1; i <= n; i++) {
+      //     fact *= i;
+      //     // fact = fact*i;
+      //   }
+      //   return fact;
+      // }
+      // n = parseInt(prompt("Enter a Number"));
+      // document.getElementById("out").innerHTML =
+      //   `Factorial of your choosen Number ${n}: ` + Factorial(n);
     </script>
   </body>
 </html>
