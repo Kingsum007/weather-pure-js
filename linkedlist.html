@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linked List</title>
+  </head>
+  <body>
+    <script>
+      //blueprint
+      class Node {
+        constructor(value) {
+          this.value = value; //head
+          this.next = null; // tail
+        }
+      }
+      //linked List
+      class LinkedList {
+        constructor() {
+          this.head = null; // First Node
+          this.size = 0; // Number of Nodes
+        }
+
+        //Insertion Beginning
+        addFirst(value) {
+          let newNode = new Node(value);
+          newNode.next = this.head; // New Item
+          this.head = newNode; // Assign New Head
+          this.size++;
+        }
+
+        //Insertion at the End
+
+        addLast(value) {
+          let newNode = new Node(value);
+          if (!this.head) {
+            this.head = newNode;
+          } else {
+            let current = this.head;
+            while (current.next) {
+              current = current.next;
+            }
+            current.next = newNode;
+          }
+          this.size++;
+        }
+        removeFirst() {
+          if (!this.head) return null;
+
+          let removed = this.head; //Assign new Head
+          this.head = this.head.next; //next bucket
+          this.size--;
+          return removed.value;
+        }
+        deleteAt(index) {
+          if (index < 0 || index >= this.size) return null;
+
+          let current = this.head;
+          if (index === 0) {
+            this.head = current.next;
+          } else {
+            let prev = null;
+            for (let i = 0; i < index; i++) {
+                prev = current;
+                current = current.next;
+            }
+            prev.next = current.next;
+          }
+          this.size--;
+
+          return current.value;
+        }
+        print()
+        {
+            let current = this.head;
+            while(current)
+        {
+            console.log(current.value);
+            current = current.next;
+        }
+        }
+      }
+      let list = new LinkedList();
+
+      list.addFirst(10);
+      list.addFirst(20);
+      list.addLast(40);
+      list.addLast(60);
+      console.log("Linked List Data");
+      list.print();
+      console.log("Linked List After Delete");
+      list.removeFirst();
+      list.print();
+      console.log("Linked List After Index 2 deletion");
+      list.deleteAt(2);
+      list.print();
+    </script>
+  </body>
+</html>
