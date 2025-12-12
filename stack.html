@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack DSA</title>
+  </head>
+  <body>
+    <script>
+      class Stack {
+        constructor() {
+            this.size = 10;
+          this.items = new Array(this.size);
+        }
+        //Insertion
+        push(element) {
+          return this.items.push(element);
+        }
+        //remove
+        pop() {
+          return this.items.pop();
+        }
+        //Top Level Peek
+        peek() {
+          return this.items[this.items.length - 1];
+        }
+
+        isEmpty() {
+          return this.items.length === 0;
+        }
+        isFull() {
+          if (this.size == this.items.length - 1) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+        print()
+        {
+            console.log(this.items);
+        }
+        printA()
+        {
+            for(let arr in this.items)
+        {
+            console.log(this.items[arr]);
+        }
+        }
+      }
+
+      let stack = new Stack();
+
+      stack.print();
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      stack.push(4);
+      stack.push(5);
+      stack.push(6);
+      stack.push(7);
+      stack.push(8);
+      stack.push(9);
+      stack.push(10);
+      stack.push(11);
+      stack.push(12);
+      stack.push(13);
+      stack.push(14);
+      //stack.pop();
+      
+      stack.printA();
+      console.log(`Peek Element ${stack.peek()} and is Empty ${stack.isEmpty()} is Full ${stack.isFull()}`);
+    </script>
+  </body>
+</html>
