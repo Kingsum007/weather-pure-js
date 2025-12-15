@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsing</title>
+  </head>
+  <body>
+    <script>
+      // () []{} */ +-
+      //Infix
+      let a = 10,
+        b = 20,
+        c = 30;
+      console.log((a + b) * c);
+      //PostFix
+
+      //InfixToPostFix
+
+      //Start => Operand => Stack => infixToPostFix
+
+      const precendence = {
+        "(": 1,
+        ")": 1,
+        "*": 2,
+        "/": 2,
+        "-": 3,
+        "+": 3,
+      };
+      function InfixToPostFix(expression) {
+        let stack = []; //Infix
+        let output = []; //PostFix
+
+        for (let ch of expression.replace(/\s+/g, "")) {
+          if (!isNaN(ch)) {
+            output.push(ch);
+          } else if (ch === "(") {
+            stack.push(ch);
+          } else if (ch === ")") {
+            while (stack.length && stack[stack.length - 1] !== "(") {
+              output.push(stack.pop());
+            }
+            stack.pop();
+          } else {
+            while (
+              stack.length &&
+              precendence[stack[stack.length - 1] >= precendence[ch]]
+            ) {
+                output.push(stack.pop());
+            }
+            stack.push(ch);
+          }
+        }
+        while(stack.length)
+        {
+            output.push(stack.pop());
+        }
+        return output.join(' ');
+      }
+
+      console.log(InfixToPostFix("4+5*(2-1)"));
+      
+      console.log(InfixToPostFix("4*5-(2/1)"));
+    </script>
+  </body>
+</html>
