@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //FIFO (First in First Out)
+      let queue = [];
+      //enqueue
+      queue.push("A"); //Index 0
+      queue.push("B");  // After Shift Index 0
+      queue.push("C");
+      console.log("Enqueue");
+      console.log(queue);
+      //Dequeue
+      queue.shift(); //Reindex
+      console.log("Dequeue");
+      console.log(queue);
+
+      class Queue{
+        constructor(){
+            this.items =[];
+            this.front =0;
+            this.rear = 0;
+        }
+        enqueue(element)
+        {
+            this.items[this.rear] = element;
+            this.rear++;
+        }
+
+        dequeue()
+        {
+            if(this.isEmpty()) return null;
+            const item = this.items[this.front];
+            this.front++;
+            return item;
+        }
+        peek()
+        {
+            return this.isEmpty() ? null : this.items[this.front];
+        }
+        isEmpty()
+        {
+            return this.rear - this.front === 0;
+        }
+
+
+        print()
+        {
+            console.log(this.items);
+        }
+      }
+       
+      const qu = new Queue();
+       
+    //   qu.enqueue("1");
+    //    qu.enqueue("2");
+    //     qu.enqueue("3");
+    //      qu.enqueue("4");
+    //       qu.enqueue("5");
+    //        qu.enqueue("6");
+
+    //      qu.print();
+
+    //     //  qu.dequeue();
+          
+    //   console.log(qu.dequeue());
+    //   console.log(qu.peek());
+      console.log(qu.isEmpty());
+
+    </script>
+  </body>
+</html>
