@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort</title>
+  </head>
+  <body>
+    <script>
+        //O(n) best Case Time Complexity
+        //O(n^2) Average
+        //O(n^2) Worst Case Time Complexity
+      function bubbleSort(arr) {
+        let size = arr.length;
+        for (let i = 0; i <=size; i++) {
+          let swap = false;
+          for (let j = 0; j <=size - 1 - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j]; //[10,9] => [9,10]
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+              swap = true;
+            }
+          }
+          if(!swap) break;
+        }
+        return arr;
+      }
+      console.log(bubbleSort([4,2,1,10,9,7,6,4,8]));
+    </script>
+  </body>
+</html>
