@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insertion Sort</title>
+  </head>
+  <body>
+    <script>
+        //Embedded System
+      function insertionSort(arr) {
+        for (let i = 1; i < arr.length; i++) {
+          let key = arr[i];
+          let j = i - 1;
+
+          while (j >= 0 && arr[j] > key) 
+          {
+            arr[j + 1] = arr[j];
+            j--;
+          }
+          arr[j+1] = key;
+        }
+        return arr;
+      }
+      const arr =[14,33,27,35,19,44,42];
+      console.log(insertionSort(arr));
+    </script>
+  </body>
+</html>
