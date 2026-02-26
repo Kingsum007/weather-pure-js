@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Sort</title>
+  </head>
+  <body>
+    <script>
+      function selectionSort(arr) {
+        let size = arr.length;
+        for (let i = 0; i < size; i++) {
+          //MIN Location
+          let minIndex = i;
+
+          for (let j = i + 1; j < size; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+          }
+          if(minIndex != i)
+          {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+          }
+        }
+
+        return arr;
+      }
+
+      console.log(selectionSort([3,7,1,9,0,1,4]));
+    </script>
+  </body>
+</html>
