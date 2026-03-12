@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hash Table</title>
+  </head>
+  <body>
+    <script>
+
+        //Object //Map
+      class HashTable {
+        constructor(size = 10) {
+          this.table = new Array(10);
+        }
+        hash(key) {
+          let total = 0;
+          for (let i = 0; i < key.length; i++) {
+            total = total + key.charCodeAt(i);
+          }
+          return total % this.table.length;
+        }
+        set(key, value) {
+          let index = this.hash(key);
+          this.table[index] = value;
+        }
+        get(key) {
+          let index = this.hash(key);
+          return this.table[index];
+        }
+      }
+      let hashaTable = new HashTable();
+
+      hashaTable.set("id", null);
+      hashaTable.set("name", "Ahmad");
+      hashaTable.set("lastName", "Ahmadi");
+      console.log(hashaTable.get("name"));
+    </script>
+  </body>
+</html>
